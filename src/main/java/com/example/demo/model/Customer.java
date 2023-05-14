@@ -2,32 +2,24 @@ package com.example.demo.model;
 
 import javax.persistence.*;
 
+import static javax.persistence.GenerationType.IDENTITY;
+
 @Entity
-@Table(name = "users")
-public class User {
+public class Customer {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @GeneratedValue(strategy = IDENTITY)
+    private Integer id;
 
     private String userName;
 
     private String password;
 
-    public User() {
-    }
-
-    public User(Long id, String userName, String password) {
-        this.id = id;
-        this.userName = userName;
-        this.password = password;
-    }
-
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
